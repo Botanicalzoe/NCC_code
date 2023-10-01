@@ -12,7 +12,7 @@ library(vegan)
 library(dplyr)
 library(piecewiseSEM)
 ########  example _spider body size the same as others #########
-df<- read_excel("E:\\2021-11-蜘蛛文章\\1-NCC返修-2023.3.11\\20230630\\data_for spider_behavior_and_abundance_2023.7.5-final.xlsx",sheet= "2_spider_abundance")
+df<- read_excel("",sheet= "")
 df$year<- as.factor(year(df$date))
 df$chambers<- as.factor(df$chambers)
 df_large<- subset(df,species %in% "large_spider")  # small_spider
@@ -39,7 +39,7 @@ car::Anova(M2)
 
 ################### piecewiseSEM #####################
 # mean of each variables per chamber per year ####
-df<- read_excel("E:\\2021-11-蜘蛛文章\\data-20211115.xlsx",sheet= "raw_data_20230620")
+df<- read_excel("",sheet= "")
 df_tr <- df[,c("temperature","lower_soil_moisture","biomass_per_m2","relative_biomass_graminoids","num_shared","num_specialized_large","num_specialized_small",
                "large_spider_abund","small_spider_abund","small_spider_mesh_size","small_spider_web_diamter","large_spider_mesh_size","large_spider_web_diamter")] %>%
   decostand("standardize", na.rm = TRUE) %>%   
